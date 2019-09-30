@@ -2,6 +2,7 @@ package model;
 /* Esta es la clase Pelicula. 
  * Incluye los atributos, constructores, getters, setters, y toString, necesarios.
  * 
+ * @author IVAN MANTECON DIAZ.
  */
 public class Pelicula {
 	private String nombre;
