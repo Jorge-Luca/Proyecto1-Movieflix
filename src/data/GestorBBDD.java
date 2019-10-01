@@ -3,6 +3,7 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -39,14 +40,35 @@ public class GestorBBDD {
         return con;
 	}
 	
-	public static void rellenaBBDD() {
+	public static void cierraConexion(Connection con) {
+		/*@author Jorge
+		 * 
+		 * Este método cierra una conexión abierta existente
+		 */
 		try {
-			FileReader archivo=new FileReader("peliculas_cat.txt");
-			int valor=archivo.read();
-			
-			
-			while(valor!=-1) {
-				
+			con.close();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void rellenaBBDD() {
+		BufferedReader archivo=null;
+		try {
+			archivo=new BufferedReader(new FileReader("peliculas_cat.txt"));
+			String lineaActual=archivo.readLine();
+			StringBuffer nombrePelicula=new StringBuffer();
+			int agnoPelicula;
+			StringBuffer categoriaPelicula=new StringBuffer();
+					
+			while(lineaActual!=null) {
+				for (int i=0;i<lineaActual.length();i++) {
+					if(i!=',') {
+						
+					}
+				}
 			}
 			
 		}catch(IOException e) {
@@ -57,4 +79,5 @@ public class GestorBBDD {
 		
 		
 	}
+	
 }
