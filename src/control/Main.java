@@ -1,7 +1,5 @@
 package control;
 
-
-
 import data.GestorBBDD;
 import model.Categoria;
 import model.Pelicula;

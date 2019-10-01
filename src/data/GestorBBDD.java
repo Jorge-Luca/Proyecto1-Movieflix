@@ -1,6 +1,5 @@
 package data;
-<<<<<<< HEAD
-=======
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -92,6 +91,7 @@ public class GestorBBDD {
             ps.setString(1, u.getNombreCompleto());
             ps.setString(2, u.getFechaNacimiento());
             ps.setString(3, u.getCiudadResidencia());
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -149,4 +149,4 @@ public class GestorBBDD {
 	
 }
 
->>>>>>> 069f84a42492030a10df6a1d0953ce03080bca80
+
