@@ -6,7 +6,7 @@ package model;
  */
 public class Pelicula {
 	private String nombre;
-	private int angnoEstreno;
+	private int agnoEstreno;
 	private Categoria categoria;
 	
 	public Pelicula() {
@@ -18,7 +18,7 @@ public class Pelicula {
 	public Pelicula(String nombre, int angnoEstreno, Categoria categoria) {
 		super();
 		this.nombre = nombre;
-		this.angnoEstreno = angnoEstreno;
+		this.agnoEstreno = angnoEstreno;
 		this.categoria = categoria;
 	}
 
@@ -33,13 +33,13 @@ public class Pelicula {
 	}
 
 
-	public int getAngnoEstreno() {
-		return angnoEstreno;
+	public int getAgnoEstreno() {
+		return agnoEstreno;
 	}
 
 
-	public void setAngnoEstreno(int angnoEstreno) {
-		this.angnoEstreno = angnoEstreno;
+	public void setAgnoEstreno(int angnoEstreno) {
+		this.agnoEstreno = angnoEstreno;
 	}
 
 
@@ -55,7 +55,7 @@ public class Pelicula {
 
 	@Override
 	public String toString() {
-		return "Pelicula [nombre=" + nombre + ", angnoEstreno=" + angnoEstreno + "]";
+		return "Pelicula [nombre=" + nombre + ", angnoEstreno=" + agnoEstreno + "]";
 	}
 
 	
