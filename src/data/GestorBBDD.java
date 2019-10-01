@@ -54,7 +54,7 @@ public class GestorBBDD {
 		try {
 			ps = con.prepareStatement(query);
 			ps.setString(1, p.getNombre());
-			ps.setInt(2, p.getAngnoEstreno());
+			ps.setInt(2, p.getAgnoEstreno());
 			ps.setObject(3, p.getCategoria());
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -91,7 +91,7 @@ public class GestorBBDD {
 			while(lineaActual!=null) {
 				String[] listaValores=lineaActual.split(",");
 				
-				insertarPelicula(new Pelicula());
+				insertarPelicula(new Pelicula(listaValores[0],lista));
 			}
 			
 		}catch(IOException e) {
