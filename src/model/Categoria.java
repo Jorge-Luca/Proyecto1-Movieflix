@@ -7,7 +7,7 @@ public enum Categoria {
 	 * 
 	 * valor de las constantes que recoge cada categoria y cada pelicula
 	 */
-	POLICIACA("Policiaca"),ROMANTICA("Romantica"), AVENTURA("Aventura"), COMEDIA("Comedia"), ANIMACION("Animacion"),THRILLER("Thriller");
+	POLICIACA("Policiaca"),ROMANTICA("Romantica"), AVENTURA("Aventuras"), COMEDIA("Comedia"), ANIMACION("Animacion"),THRILLER("Thriller");
 	
 	private final String nombre;
 

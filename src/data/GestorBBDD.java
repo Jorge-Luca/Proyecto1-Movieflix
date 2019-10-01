@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import model.Categoria;
 import model.Pelicula;
 import java.io.BufferedReader;
 import java.io.File;
@@ -55,7 +57,7 @@ public class GestorBBDD {
 			ps = con.prepareStatement(query);
 			ps.setString(1, p.getNombre());
 			ps.setInt(2, p.getAgnoEstreno());
-			ps.setObject(3, p.getCategoria());
+			ps.setString(3, p.getCategoria().getNombre());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -84,22 +86,48 @@ public class GestorBBDD {
 		try {
 			archivo=new BufferedReader(new FileReader("peliculas_cat.txt"));
 			String lineaActual=archivo.readLine();
-			StringBuffer nombrePelicula=new StringBuffer();
-			int agnoPelicula;
-			StringBuffer categoriaPelicula=new StringBuffer();
 					
 			while(lineaActual!=null) {
-				String[] listaValores=lineaActual.split(",");
 				
-				insertarPelicula(new Pelicula(listaValores[0],lista));
+				try {
+				String[] listaValores=lineaActual.split(",");
+				Categoria cat=null;
+				
+				if (listaValores[2].equalsIgnoreCase(Categoria.ANIMACION.getNombre())) {
+					cat=Categoria.ANIMACION;
+				}
+				else if(listaValores[2].equalsIgnoreCase(Categoria.AVENTURA.getNombre())) {
+					cat=Categoria.AVENTURA;
+				}
+				else if(listaValores[2].equalsIgnoreCase(Categoria.COMEDIA.getNombre())) {
+					cat=Categoria.COMEDIA;
+				}
+				else if(listaValores[2].equalsIgnoreCase(Categoria.POLICIACA.getNombre())) {
+					cat=Categoria.POLICIACA;
+				}
+				else if(listaValores[2].equalsIgnoreCase(Categoria.ROMANTICA.getNombre())) {
+					cat=Categoria.ROMANTICA;
+				}
+				else if(listaValores[2].equalsIgnoreCase(Categoria.THRILLER.getNombre())) {
+					cat=Categoria.THRILLER;
+				}else {}
+				
+				
+				insertarPelicula(new Pelicula(listaValores[0],Integer.parseInt(listaValores[1]),cat));
+				lineaActual=archivo.readLine();
+				
+				}catch(Exception e) {
+					
+					e.printStackTrace();
+					lineaActual=archivo.readLine();
+				}
 			}
 			
 		}catch(IOException e) {
 			e.printStackTrace();
 		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		
 	}
 	
