@@ -64,11 +64,8 @@ public class GestorBBDD {
 			StringBuffer categoriaPelicula=new StringBuffer();
 					
 			while(lineaActual!=null) {
-				for (int i=0;i<lineaActual.length();i++) {
-					if(i!=',') {
-						
-					}
-				}
+				String[] listaValores=lineaActual.split(",");
+				
 			}
 			
 		}catch(IOException e) {
