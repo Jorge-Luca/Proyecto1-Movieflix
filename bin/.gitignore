@@ -1,2 +1,21 @@
+<<<<<<< HEAD
 /peliculas_cat.txt
 /peliculas_numCat.txt
+=======
+<<<<<<< HEAD
+/model/
+/data/
+/control/
+=======
+/data/
+<<<<<<< HEAD
+/control/
+/peliculas_cat.txt
+/peliculas_numCat.txt
+=======
+/services/
+/utilities/
+/model/
+>>>>>>> model
+>>>>>>> b093385f1ce913df746c9da8b867b972ab316c5d
+>>>>>>> 8cbe1bb05f8d04bbc98f5d4487e6c6cb6aa44ef6
