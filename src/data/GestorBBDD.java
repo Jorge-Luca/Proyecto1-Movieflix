@@ -3,6 +3,10 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class GestorBBDD {
 	/*@author Jorge
@@ -19,9 +23,9 @@ public class GestorBBDD {
 		 * Método diseñado para devolver una conexion abierta con la BBDD
 		 */
 		Connection con = null;
-		String url = "jdbc:mysql://80.65.12.133:3306/proyecto1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		String url = "jdbc:mysql://10.90.36.112:3306/proyecto1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "root";
-        String password = "root";
+        String password = "password";
 			
         try { 
             con = DriverManager.getConnection(url, user, password);
@@ -33,5 +37,24 @@ public class GestorBBDD {
         }
         
         return con;
+	}
+	
+	public static void rellenaBBDD() {
+		try {
+			FileReader archivo=new FileReader("peliculas_cat.txt");
+			int valor=archivo.read();
+			
+			
+			while(valor!=-1) {
+				
+			}
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 }
