@@ -4,16 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-<<<<<<< HEAD
 import java.util.Date;
 import java.util.Set;
 import model.Categoria;
 import model.Pelicula;
 import model.Usuario;
-=======
-
 import model.Categoria;
->>>>>>> 8cbe1bb05f8d04bbc98f5d4487e6c6cb6aa44ef6
 import model.Pelicula;
 import java.io.BufferedReader;
 import java.io.File;
@@ -68,11 +64,8 @@ public class GestorBBDD {
 			ps.setString(1, p.getNombre());
 			ps.setInt(2, p.getAgnoEstreno());
 			ps.setString(3, p.getCategoria().getNombre());
-<<<<<<< HEAD
 			ps.setInt(2, p.getAgnoEstreno());
 			ps.setString(3, p.getCategoria().getNombre());
-=======
->>>>>>> 8cbe1bb05f8d04bbc98f5d4487e6c6cb6aa44ef6
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -98,7 +91,7 @@ public class GestorBBDD {
 	public static void rellenaBBDD() {
 		BufferedReader archivo = null;
 		try {
-<<<<<<< HEAD
+
 			archivo = new BufferedReader(new FileReader("peliculas_cat.txt"));
 			String lineaActual = archivo.readLine();
 			StringBuffer nombrePelicula = new StringBuffer();
@@ -112,19 +105,19 @@ public class GestorBBDD {
 					}
 				}
 			StringBuffer categoriaPelicula=new StringBuffer();
-=======
+
 			archivo=new BufferedReader(new FileReader("peliculas_cat.txt"));
 			String lineaActual=archivo.readLine();
->>>>>>> 8cbe1bb05f8d04bbc98f5d4487e6c6cb6aa44ef6
+
 					
-			while(lineaActual!=null) {
+			   while(lineaActual!=null) {
 				
 				try {
 				String[] listaValores=lineaActual.split(",");
-<<<<<<< HEAD
+
 
 				insertarPelicula(new Pelicula(listaValores[0],lista));
-=======
+
 				Categoria cat=null;
 				
 				if (listaValores[2].equalsIgnoreCase(Categoria.ANIMACION.getNombre())) {
@@ -155,7 +148,7 @@ public class GestorBBDD {
 					e.printStackTrace();
 					lineaActual=archivo.readLine();
 				}
->>>>>>> 8cbe1bb05f8d04bbc98f5d4487e6c6cb6aa44ef6
+
 			}
 
 		} catch (IOException e) {
@@ -185,13 +178,12 @@ public class GestorBBDD {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
-<<<<<<< HEAD
+
 		}
 
-=======
 		}		
 		
->>>>>>> 8cbe1bb05f8d04bbc98f5d4487e6c6cb6aa44ef6
+
 	}
 
-}
+
