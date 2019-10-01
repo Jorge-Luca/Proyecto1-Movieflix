@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Usuario {
 	private String nombreCompleto;
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 	private String ciudadResidencia;
 	private Set <Categoria> listaCategoria;
 	
@@ -13,7 +13,7 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(String nombreCompleto, Date fechaNacimiento, String ciudadResidencia,
+	public Usuario(String nombreCompleto, String fechaNacimiento, String ciudadResidencia,
 			Set<Categoria> listaCategoria) {
 		super();
 		this.nombreCompleto = nombreCompleto;
@@ -30,11 +30,11 @@ public class Usuario {
 		this.nombreCompleto = nombreCompleto;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

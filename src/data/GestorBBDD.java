@@ -7,6 +7,8 @@ import java.sql.SQLException;
 
 import model.Categoria;
 import model.Pelicula;
+import model.Usuario;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -79,6 +81,19 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	}
+	public static void insertarUsuario(Usuario u) {
+        Connection con = estableceConexion();
+        PreparedStatement ps;
+        String query = "INSERT INTO usuarios (nombreCompleto, fechaNacimiento, ciudadResidencia) VALUE (?,?,?)";
+        try {
+            ps = con.prepareStatement(query);
+            ps.setString(1, u.getNombreCompleto());
+            ps.setString(2, u.getFechaNacimiento());
+            ps.setString(3, u.getCiudadResidencia());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        }
 	
 
 	public static void rellenaBBDD() {
