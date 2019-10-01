@@ -2,7 +2,13 @@ package data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Date;
+import java.util.Set;
+
+import model.Categoria;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -54,7 +60,22 @@ public class GestorBBDD {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		/*@author Yolanda
+		 * 
+		 * Método para añadir usuario en la BBDD
+		 */
+	public static void insertarUsuario ( Usuario u) {
 		
+		Connection con = estableceConexion ();
+		PreparedStatement psInsertar = usuarios;
+		String query=  "INSERT INTO"  usuarios (String nombreCompleto; Date fechaNacimiento; String ciudadResidencia;
+		Set <Categoria> listaCategoria;
+			
+		 
+		
+				
+		
+	}
 		
 	}
 }
