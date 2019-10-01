@@ -3,6 +3,10 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class GestorBBDD {
 	/*@author Jorge
@@ -33,5 +37,24 @@ public class GestorBBDD {
         }
         
         return con;
+	}
+	
+	public static void rellenaBBDD() {
+		try {
+			FileReader archivo=new FileReader("peliculas_cat.txt");
+			int valor=archivo.read();
+			
+			
+			while(valor!=-1) {
+				
+			}
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 }
