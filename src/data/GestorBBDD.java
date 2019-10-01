@@ -2,7 +2,9 @@ package data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import model.Pelicula;
 
 public class GestorBBDD {
 	/*@author Jorge
@@ -33,5 +35,25 @@ public class GestorBBDD {
         }
         
         return con;
+	}
+	
+	/*Con este método añadimos películas, estableciendo antes la conexion a BBDD.*/
+	public static void insertarPelicula(Pelicula p) {
+		/*
+		 * @author Iván Mantecón
+		 * */
+		Connection con=estableceConexion();
+		PreparedStatement ps;
+		String query = "INSERT INTO peliculas (nombre, agnoEstreno, categoria) VALUE (?,?,?)";
+		try {
+			ps = con.prepareStatement(query);
+			ps.setString(1, p.getNombre());
+			ps.setInt(2, p.getAngnoEstreno());
+			ps.setObject(3, p.getCategoria());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
