@@ -5,8 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import model.Pelicula;
 =======
+=======
+import java.io.BufferedReader;
+>>>>>>> 5b5984cd4b3b885f05e04974cc9a6cc83af369b4
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -45,6 +49,7 @@ public class GestorBBDD {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/*Con este método añadimos películas, estableciendo antes la conexion a BBDD.*/
 	public static void insertarPelicula(Pelicula p) {
 		/*
@@ -66,14 +71,37 @@ public class GestorBBDD {
 	}
 }
 =======
-	public static void rellenaBBDD() {
+=======
+	public static void cierraConexion(Connection con) {
+		/*@author Jorge
+		 * 
+		 * Este método cierra una conexión abierta existente
+		 */
 		try {
-			FileReader archivo=new FileReader("peliculas_cat.txt");
-			int valor=archivo.read();
-			
-			
-			while(valor!=-1) {
-				
+			con.close();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+>>>>>>> 5b5984cd4b3b885f05e04974cc9a6cc83af369b4
+	public static void rellenaBBDD() {
+		BufferedReader archivo=null;
+		try {
+			archivo=new BufferedReader(new FileReader("peliculas_cat.txt"));
+			String lineaActual=archivo.readLine();
+			StringBuffer nombrePelicula=new StringBuffer();
+			int agnoPelicula;
+			StringBuffer categoriaPelicula=new StringBuffer();
+					
+			while(lineaActual!=null) {
+				for (int i=0;i<lineaActual.length();i++) {
+					if(i!=',') {
+						
+					}
+				}
 			}
 			
 		}catch(IOException e) {
@@ -84,5 +112,6 @@ public class GestorBBDD {
 		
 		
 	}
+	
 }
 >>>>>>> b093385f1ce913df746c9da8b867b972ab316c5d
