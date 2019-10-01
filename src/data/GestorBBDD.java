@@ -4,13 +4,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 66b65aea14492c050c3dc8861042d67dbe8fba8f
 import model.Pelicula;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 66b65aea14492c050c3dc8861042d67dbe8fba8f
 public class GestorBBDD {
 	/*
 	 * @author Jorge
@@ -43,11 +50,15 @@ public class GestorBBDD {
 
 		return con;
 	}
+<<<<<<< HEAD
 
 	/*
 	 * Con este método añadimos películas, estableciendo antes la conexion a BBDD.
 	 */
 
+=======
+	
+>>>>>>> 66b65aea14492c050c3dc8861042d67dbe8fba8f
 	/*Con este método añadimos películas, estableciendo antes la conexion a BBDD.*/
 	public static void insertarPelicula(Pelicula p) {
 		/*
@@ -84,8 +95,12 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 
 
+=======
+	
+>>>>>>> 66b65aea14492c050c3dc8861042d67dbe8fba8f
 	public static void rellenaBBDD() {
 		BufferedReader archivo = null;
 		try {
