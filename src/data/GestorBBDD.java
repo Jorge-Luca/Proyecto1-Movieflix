@@ -1,23 +1,29 @@
 package data;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import java.util.Date;
 import java.util.Set;
 import model.Categoria;
 import model.Pelicula;
 import model.Usuario;
 
+=======
+import model.Pelicula;
+>>>>>>> f5288051764dc0bad749f013cbb66d3aaa64dfa5
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class GestorBBDD {
+<<<<<<< HEAD
 	private static String nombreCompleto;
 
+=======
+>>>>>>> f5288051764dc0bad749f013cbb66d3aaa64dfa5
 	/*
 	 * @author Jorge
 	 * 
@@ -51,7 +57,11 @@ public class GestorBBDD {
 	}
 
 	/*
+<<<<<<< HEAD
 	 * Con este método añadimos películas, estableciendo antes la conexion a BBDD.
+=======
+	 * Con el siguiente método añadimos películas, estableciendo antes la conexión a BBDD.
+>>>>>>> f5288051764dc0bad749f013cbb66d3aaa64dfa5
 	 */
 	public static void insertarPelicula(Pelicula p) {
 		/*
@@ -63,8 +73,10 @@ public class GestorBBDD {
 		try {
 			ps = con.prepareStatement(query);
 			ps.setString(1, p.getNombre());
-			ps.setInt(2, p.getAngnoEstreno());
-			ps.setObject(3, p.getCategoria());
+			ps.setInt(2, p.getAgnoEstreno());
+			ps.setString(3, p.getCategoria().getNombre());
+			ps.setInt(2, p.getAgnoEstreno());
+			ps.setString(3, p.getCategoria().getNombre());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -86,29 +98,40 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> f5288051764dc0bad749f013cbb66d3aaa64dfa5
 	public static void rellenaBBDD() {
-		BufferedReader archivo=null;
+		BufferedReader archivo = null;
 		try {
-			archivo=new BufferedReader(new FileReader("peliculas_cat.txt"));
-			String lineaActual=archivo.readLine();
-			StringBuffer nombrePelicula=new StringBuffer();
+			archivo = new BufferedReader(new FileReader("peliculas_cat.txt"));
+			String lineaActual = archivo.readLine();
+			StringBuffer nombrePelicula = new StringBuffer();
 			int agnoPelicula;
+			StringBuffer categoriaPelicula = new StringBuffer();
+
+			while (lineaActual != null) {
+				for (int i = 0; i < lineaActual.length(); i++) {
+					if (i != ',') {
+
+					}
+				}
 			StringBuffer categoriaPelicula=new StringBuffer();
 					
 			while(lineaActual!=null) {
-				for (int i=0;i<lineaActual.length();i++) {
-					if(i!=',') {
-						
-					}
-				}
+				String[] listaValores=lineaActual.split(",");
+
+				insertarPelicula(new Pelicula(listaValores[0],lista));
 			}
-			
-		}catch(IOException e) {
+
+		} catch (IOException e) {
 			e.printStackTrace();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 	}
 
 	/*
@@ -145,4 +168,9 @@ public class GestorBBDD {
 
 
 
+=======
+
+	}
+}
+>>>>>>> f5288051764dc0bad749f013cbb66d3aaa64dfa5
 

@@ -10,7 +10,9 @@ public class Main {
 		// TODO Auto-generated method stub
 		Pelicula p = new Pelicula();
 		p.setNombre("prueba");
-		p.setAngnoEstreno(1122);
+		p.setAgnoEstreno(1234242);
+
+		p.setAgnoEstreno(1122);
 		p.setCategoria(Categoria.POLICIACA);
 		
 		System.out.println(p.toString() + p.getCategoria().getNombre());
