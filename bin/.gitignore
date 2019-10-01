@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/services/
-=======
 /data/
-/control/
->>>>>>> 18a5794053204905ddd3bc0e9239e8db69572149
+/utilities/
+/services/
