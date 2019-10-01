@@ -90,6 +90,7 @@ public class GestorBBDD {
 			String lineaActual = archivo.readLine();
 			StringBuffer nombrePelicula = new StringBuffer();
 			int agnoPelicula;
+<<<<<<< HEAD
 			StringBuffer categoriaPelicula = new StringBuffer();
 
 			while (lineaActual != null) {
@@ -98,6 +99,13 @@ public class GestorBBDD {
 
 					}
 				}
+=======
+			StringBuffer categoriaPelicula=new StringBuffer();
+					
+			while(lineaActual!=null) {
+				String[] listaValores=lineaActual.split(",");
+				
+>>>>>>> fb5728c169b70ca4a9d14617c7f3be887e07f3a8
 			}
 
 		} catch (IOException e) {
