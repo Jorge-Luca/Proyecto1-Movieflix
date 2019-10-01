@@ -1,5 +1,7 @@
 package model;
 
+//@author Yolanda
+
 public enum Categoria {
 	/*@author Yolanda
 	 * 
