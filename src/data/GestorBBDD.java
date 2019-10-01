@@ -19,9 +19,9 @@ public class GestorBBDD {
 		 * Método diseñado para devolver una conexion abierta con la BBDD
 		 */
 		Connection con = null;
-		String url = "jdbc:mysql://80.65.12.133:3306/proyecto1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		String url = "jdbc:mysql://10.90.36.112:3306/proyecto1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "root";
-        String password = "root";
+        String password = "password";
 			
         try { 
             con = DriverManager.getConnection(url, user, password);
