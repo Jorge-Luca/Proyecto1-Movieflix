@@ -117,7 +117,6 @@ public class GestorBBDD {
 				lineaActual=archivo.readLine();
 				
 				}catch(Exception e) {
-					
 					e.printStackTrace();
 					lineaActual=archivo.readLine();
 				}
