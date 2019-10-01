@@ -7,7 +7,17 @@ public enum Categoria {
 	 * 
 	 * valor de las constantes que recoge cada categoria y cada pelicula
 	 */
-	POLICIACA,ROMANTICA, AVENTURA, COMEDIA, ANIMACION,THRILLER;
+	POLICIACA("Policiaca"),ROMANTICA("Romantica"), AVENTURA("Aventura"), COMEDIA("Comedia"), ANIMACION("Animacion"),THRILLER("Thriller");
+	
+	private final String nombre;
+
+	private Categoria(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
 	
 	
 }
