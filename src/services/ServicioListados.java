@@ -20,6 +20,8 @@ import model.Usuario;
  */
 public class ServicioListados {
 	
-	
+	public static ArrayList<Pelicula> devuelveListaAccesibles(Usuario u) {
+		return GestorBBDD.devuelveListaAccesibles(u);
+	}
 
 }
