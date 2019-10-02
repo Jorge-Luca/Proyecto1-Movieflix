@@ -12,6 +12,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		/*Pelicula p = new Pelicula();
 		p.setNombre("prueba");
 		p.setAngnoEstreno(1122);
@@ -30,6 +31,23 @@ public class Main {
 		//System.out.println(p.toString() + p.getCategoria().getNombre());
 		Usuario u = new Usuario("David", "07/02/1998", "Fuenlabrada",categorias);	
 		GestorBBDD.devuelveListaAccesibles(u);
+=======
+		
+		
+		Usuario u= new Usuario ();
+		u.setNombreCompleto("Maria del Carmen");
+		u.setFechaNacimiento("18/12/2001");
+		u.setCiudadResidencia("Barcelona");
+		
+		
+		System.out.println(u.toString() + u.getNombreCompleto());
+		GestorBBDD.
+		
+		
 		
 	}
-}
+		
+		
+>>>>>>> 3bf30ce558a2378f6e395f6b65e9fbbdd8606bff
+		
+	}

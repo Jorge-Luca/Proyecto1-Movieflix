@@ -4,7 +4,11 @@ import java.util.Set;
 
 public class Usuario {
 	private String nombreCompleto;
+<<<<<<< HEAD
 	private String  fechaNacimiento;
+=======
+	private String fechaNacimiento;
+>>>>>>> 3bf30ce558a2378f6e395f6b65e9fbbdd8606bff
 	private String ciudadResidencia;
 	private Set <Categoria> listaCategoria;
 	
@@ -52,6 +56,14 @@ public class Usuario {
 	public void setListaCategoria(Set<Categoria> listaCategoria) {
 		this.listaCategoria = listaCategoria;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [nombreCompleto=" + nombreCompleto + ", fechaNacimiento=" + fechaNacimiento
+				+ ", ciudadResidencia=" + ciudadResidencia + ", listaCategoria=" + listaCategoria + "]";
+	}
+	
+	
 	
 	public void asignarCategoria() {
 		listaCategoria.add(Categoria.ANIMACION);
