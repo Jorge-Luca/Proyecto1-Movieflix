@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import model.Categoria;
 import model.Pelicula;
@@ -184,7 +185,62 @@ public class GestorBBDD {
         return alAccesibles;
     }
 
-
+ public static void elilminarUsuario() {
+	 String nombre;
+	 Scanner teclado = new Scanner(System.in);
+	 int id;
+	 System.out.println("Introduce el nombre del usuario");
+	 nombre=teclado.nextLine();
+	 
+	 String sql="SELECT idUsuarios FROM usuarios WHERE LOWER(nombreCompleto) LIKE '"+nombre+"'";
+	 
+	 PreparedStatement ps;
+	 PreparedStatement psBorrar;
+     Connection c = estableceConexion();
+     try {
+     ps = c.prepareStatement(sql);
+     ResultSet rs = ps.executeQuery(sql);
+     while(rs.next()) {
+         id=rs.getInt("idUsuarios");
+         String sqlBorrar ="DELETE FROM usuarios WHERE idUsuarios="+id+"";
+         psBorrar = c.prepareStatement(sqlBorrar);
+         psBorrar.executeUpdate();
+     }
+     
+     
+     }catch(SQLException e) {
+    	 e.printStackTrace();
+     }
+ }
+ 
+ public static void elilminarPelicula() {
+	 String nombre;
+	 Scanner teclado = new Scanner(System.in);
+	 int id;
+	 System.out.println("Introduce el nombre de la pelicula");
+	 nombre=teclado.nextLine();
+	 
+	 String sql="SELECT idPeliculas FROM peliculas WHERE LOWER(nombre) LIKE '"+nombre+"'";
+	 
+	 PreparedStatement ps;
+	 PreparedStatement psBorrar;
+     Connection c = estableceConexion();
+     try {
+     ps = c.prepareStatement(sql);
+     ResultSet rs = ps.executeQuery(sql);
+     while(rs.next()) {
+         id=rs.getInt("idPeliculas");
+         String sqlBorrar ="DELETE FROM peliculas WHERE idPeliculas="+id+"";
+         psBorrar = c.prepareStatement(sqlBorrar);
+         psBorrar.executeUpdate();
+     }
+     
+     
+     }catch(SQLException e) {
+    	 e.printStackTrace();
+     }
+ }
+ 
 	
 }
 
