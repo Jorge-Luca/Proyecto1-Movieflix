@@ -1,6 +1,11 @@
+/data/
 /peliculas_cat.txt
 /peliculas_numCat.txt
+<<<<<<< HEAD
 /control/
 /data/
 /services/
 /model/
+=======
+/services/
+>>>>>>> services

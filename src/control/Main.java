@@ -18,7 +18,7 @@ public class Main {
 		
 		
 		System.out.println(u.toString() + u.getNombreCompleto());
-		GestorBBDD.insertarUsuario(u);
+		GestorBBDD.
 		
 		
 		

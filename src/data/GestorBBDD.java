@@ -82,6 +82,10 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * @author Yolanda Gutiérrez
+	 * Creamos un método para insertar usuarios conectado con BBDD.
+	 * */
 	public static void insertarUsuario(Usuario u) {
         Connection con = estableceConexion();
         PreparedStatement ps;
