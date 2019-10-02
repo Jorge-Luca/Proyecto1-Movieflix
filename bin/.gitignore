@@ -1,16 +1,11 @@
-<<<<<<< HEAD
-/model/
 /data/
-/control/
-=======
-/data/
-<<<<<<< HEAD
-/control/
 /peliculas_cat.txt
 /peliculas_numCat.txt
+<<<<<<< HEAD
+/control/
+/data/
+/services/
+/model/
 =======
 /services/
-/utilities/
-/model/
->>>>>>> model
->>>>>>> b093385f1ce913df746c9da8b867b972ab316c5d
+>>>>>>> services

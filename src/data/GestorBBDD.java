@@ -1,5 +1,6 @@
 package data;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -81,6 +82,10 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * @author Yolanda Gutiérrez
+	 * Creamos un método para insertar usuarios conectado con BBDD.
+	 * */
 	public static void insertarUsuario(Usuario u) {
         Connection con = estableceConexion();
         PreparedStatement ps;
@@ -90,6 +95,7 @@ public class GestorBBDD {
             ps.setString(1, u.getNombreCompleto());
             ps.setString(2, u.getFechaNacimiento());
             ps.setString(3, u.getCiudadResidencia());
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -150,4 +156,5 @@ public class GestorBBDD {
 	}
 	
 }
+
 

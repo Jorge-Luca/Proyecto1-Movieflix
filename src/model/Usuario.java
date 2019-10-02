@@ -53,5 +53,13 @@ public class Usuario {
 	public void setListaCategoria(Set<Categoria> listaCategoria) {
 		this.listaCategoria = listaCategoria;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [nombreCompleto=" + nombreCompleto + ", fechaNacimiento=" + fechaNacimiento
+				+ ", ciudadResidencia=" + ciudadResidencia + ", listaCategoria=" + listaCategoria + "]";
+	}
+	
+	
 	
 }
