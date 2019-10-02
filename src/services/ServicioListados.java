@@ -20,10 +20,6 @@ import model.Usuario;
  */
 public class ServicioListados {
 	
-	public static ArrayList<Pelicula>devuelveListaAccesibles(Usuario u) {
-		ArrayList<Pelicula> aLDevolver = new ArrayList<Pelicula>();
-		aLDevolver=GestorBBDD.devuelveListaAccesibles();
-		return aLDevolver;
-	}
+	
 
 }

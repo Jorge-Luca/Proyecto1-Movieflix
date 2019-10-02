@@ -118,22 +118,22 @@ public class GestorBBDD {
 				String[] listaValores=lineaActual.split(",");
 				Categoria cat=null;
 				
-				if (listaValores[2].equalsIgnoreCase(Categoria.ANIMACION.getNombre())) {
+				if (listaValores[2].replaceAll(" ","").equalsIgnoreCase(Categoria.ANIMACION.getNombre())) {
 					cat=Categoria.ANIMACION;
 				}
-				else if(listaValores[2].equalsIgnoreCase(Categoria.AVENTURA.getNombre())) {
+				else if(listaValores[2].replaceAll(" ","").equalsIgnoreCase(Categoria.AVENTURA.getNombre())) {
 					cat=Categoria.AVENTURA;
 				}
-				else if(listaValores[2].equalsIgnoreCase(Categoria.COMEDIA.getNombre())) {
+				else if(listaValores[2].replaceAll(" ","").equalsIgnoreCase(Categoria.COMEDIA.getNombre())) {
 					cat=Categoria.COMEDIA;
 				}
-				else if(listaValores[2].equalsIgnoreCase(Categoria.POLICIACA.getNombre())) {
+				else if(listaValores[2].replaceAll(" ","").equalsIgnoreCase(Categoria.POLICIACA.getNombre())) {
 					cat=Categoria.POLICIACA;
 				}
-				else if(listaValores[2].equalsIgnoreCase(Categoria.ROMANTICA.getNombre())) {
+				else if(listaValores[2].replaceAll(" ","").equalsIgnoreCase(Categoria.ROMANTICA.getNombre())) {
 					cat=Categoria.ROMANTICA;
 				}
-				else if(listaValores[2].equalsIgnoreCase(Categoria.THRILLER.getNombre())) {
+				else if(listaValores[2].replaceAll(" ","").equalsIgnoreCase(Categoria.THRILLER.getNombre())) {
 					cat=Categoria.THRILLER;
 				}else {}
 				
