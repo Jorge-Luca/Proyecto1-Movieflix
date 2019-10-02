@@ -4,11 +4,14 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Categoria;
 import model.Pelicula;
 import model.Usuario;
+import utilities.Generar;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -154,6 +157,34 @@ public class GestorBBDD {
 		}		
 		
 	}
+	public static ArrayList<Pelicula> devuelveListaAccesibles(Usuario u) {
+        ArrayList<Pelicula> alAccesibles = new ArrayList();
+        Pelicula p=null;
+        
+        PreparedStatement ps;
+        Connection c = estableceConexion();
+        
+        StringBuilder where=new StringBuilder();
+        
+        for (Categoria cat:u.getListaCategoria()) {
+            where.append("'"+cat.getNombre()+"'"+",");
+        }
+        where.replace(where.length()-1, where.length(), "");
+        String sql = "SELECT nombre,agnoEstreno,categoria FROM peliculas WHERE categoria IN ("+where+ ");";
+        System.out.println(sql);
+        try {
+            ps = c.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
+            while(rs.next()) {
+                alAccesibles.add(Generar.generarPelicula(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return alAccesibles;
+    }
+
+
 	
 }
 
