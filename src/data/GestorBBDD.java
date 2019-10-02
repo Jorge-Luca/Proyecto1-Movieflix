@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.Categoria;
@@ -184,8 +185,25 @@ public class GestorBBDD {
         return alAccesibles;
     }
 
-
-	
+	public static ArrayList<Pelicula> devuelveListaCompletaPeliculas() {
+		ArrayList<Pelicula> alPelicula = new ArrayList<Pelicula>();
+		Connection con = estableceConexion();
+		String query = "SELECT * FROM peliculas";
+		Statement st;
+		try {
+			st = con.createStatement();
+			ResultSet rs=st.executeQuery(query);
+			
+			while (rs.next()) {
+				Generar.generarPelicula(rs);
+				alPelicula.add(Generar.generarPelicula(rs));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return alPelicula ;
+	}
 }
 
 

@@ -1,5 +1,7 @@
 package control;
 
+import java.util.ArrayList;
+
 import data.GestorBBDD;
 import model.Categoria;
 import model.Pelicula;
@@ -11,6 +13,7 @@ public class Main {
 		// TODO Auto-generated method stub
 				
 		GestorBBDD.rellenaBBDD();
+
 	}
 		
 }
