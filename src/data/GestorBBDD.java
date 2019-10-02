@@ -97,6 +97,10 @@ public class GestorBBDD {
 	
 
 	public static void rellenaBBDD() {
+		/*@author Jorge
+		 * 
+		 * 
+		 */
 		BufferedReader archivo=null;
 		try {
 			archivo=new BufferedReader(new FileReader("peliculas_cat.txt"));
@@ -128,7 +132,7 @@ public class GestorBBDD {
 				}else {}
 				
 				
-				insertarPelicula(new Pelicula(listaValores[0],Integer.parseInt(listaValores[1]),cat));
+				insertarPelicula(new Pelicula(listaValores[0],Integer.parseInt(listaValores[1].replaceAll(" ","")),cat));
 				lineaActual=archivo.readLine();
 				
 				}catch(Exception e) {
