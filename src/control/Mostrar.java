@@ -8,5 +8,7 @@ package control;
 
 public class Mostrar {
 	
-
+	public void listaAccesibles(Usuario u) {
+		System.out.println(ServicioListados.devuelveListaAccesibles());
+	}
 }
