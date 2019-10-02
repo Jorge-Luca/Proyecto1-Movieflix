@@ -22,7 +22,7 @@ public class ServicioListados {
 	
 	public static ArrayList<Pelicula>devuelveListaAccesibles(Usuario u) {
 		ArrayList<Pelicula> aLDevolver = new ArrayList<Pelicula>();
-		aLDevolver=GestorBBDD.devuelveListaAccesibles();
+		aLDevolver=GestorBBDD.devuelveListaAccesibles(u);
 		return aLDevolver;
 	}
 
