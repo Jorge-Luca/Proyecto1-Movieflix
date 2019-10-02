@@ -158,6 +158,12 @@ public class GestorBBDD {
 		}		
 		
 	}
+	/**
+	 * 
+	 * @param u
+	 * @author David
+	 * El siguiente método devuelve las películas que puede ver un usuario.
+	 */
 	public static ArrayList<Pelicula> devuelveListaAccesibles(Usuario u) {
         ArrayList<Pelicula> alAccesibles = new ArrayList();
         Pelicula p=null;
@@ -185,6 +191,11 @@ public class GestorBBDD {
         return alAccesibles;
     }
 
+	/**
+	 * 
+	 * @author Iván Mantecón
+	 * En el siguiente método se realiza la consulta de mostrar peliculas.
+	 */
 	public static ArrayList<Pelicula> devuelveListaCompletaPeliculas() {
 		ArrayList<Pelicula> alPelicula = new ArrayList<Pelicula>();
 		Connection con = estableceConexion();
