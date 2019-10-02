@@ -1,11 +1,10 @@
 package model;
 
-import java.util.Date;
 import java.util.Set;
 
 public class Usuario {
 	private String nombreCompleto;
-	private Date fechaNacimiento;
+	private String  fechaNacimiento;
 	private String ciudadResidencia;
 	private Set <Categoria> listaCategoria;
 	
@@ -13,7 +12,7 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(String nombreCompleto, Date fechaNacimiento, String ciudadResidencia,
+	public Usuario(String nombreCompleto, String fechaNacimiento, String ciudadResidencia,
 			Set<Categoria> listaCategoria) {
 		super();
 		this.nombreCompleto = nombreCompleto;
@@ -30,11 +29,11 @@ public class Usuario {
 		this.nombreCompleto = nombreCompleto;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -52,6 +51,15 @@ public class Usuario {
 
 	public void setListaCategoria(Set<Categoria> listaCategoria) {
 		this.listaCategoria = listaCategoria;
+	}
+	
+	public void asignarCategoria() {
+		listaCategoria.add(Categoria.ANIMACION);
+		listaCategoria.add(Categoria.AVENTURA);
+		listaCategoria.add(Categoria.COMEDIA);
+		listaCategoria.add(Categoria.POLICIACA);
+		listaCategoria.add(Categoria.ROMANTICA);
+		listaCategoria.add(Categoria.THRILLER);
 	}
 	
 }
